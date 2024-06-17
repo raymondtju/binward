@@ -8,12 +8,49 @@ export const links = [
     url: "/events",
   },
   {
+    title: "Contribute",
+    url: "/contribute",
+  },
+  {
     title: "Shop",
     url: "/shop",
   },
   {
     title: "Articles",
     url: "/articles",
+  },
+];
+
+export const localEvents = [
+  {
+    title: "Ward Launch",
+    description:
+      "Join us for the launch of Ward, a smart bin that rewards you for recycling.",
+    location: "Ward HQ",
+    date: "July 20, 2024",
+    time: "10:00",
+    color: "#265092",
+    imageUrl: "/dummy/ward-launch.webp",
+  },
+  {
+    title: "E-Waste Collection Drive",
+    description:
+      "Drop off your old electronics for recycling. Earn extra points for each item you bring.",
+    location: "Ward HQ",
+    date: "August 15, 2024",
+    time: "10:00",
+    imageUrl: "/dummy/coll.webp",
+    color: "#265F51",
+  },
+  {
+    title: "Ward Recycling Workshop",
+    description:
+      "Learn how to effectively sort and recycle your waste. Participants will get a free recycling kit.",
+    location: "Green Community Hall",
+    date: "September 10, 2024",
+    imageUrl: "/dummy/workshop.webp",
+    time: "10:00",
+    color: "#4FC5A8",
   },
 ];
 

@@ -40,7 +40,7 @@ function ShopPage() {
           {shopProducts.map((product, index) => (
             <Link
               href={product.path}
-              className="relative rounded-2xl p-3 bg-gray-50 hover:shadow-md transition-all duration-300"
+              className="relative rounded-2xl p-3 bg-gray-50 hover:bg-gray-100 hover:border-gray-200 border border-transparent transition-all duration-300"
               key={index}
             >
               <Image
