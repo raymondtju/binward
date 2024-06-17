@@ -108,32 +108,32 @@ const Card = ({
   );
 };
 
-export const projects = [
-  {
-    title: "Reduce",
-    description:
-      "In his series AD2186, German photographer Matthias Leidinger captures the awe-inspiring landscapes of the American Southwest, exploring the region’s vast, otherworldly terrain and the sense of wonder it evokes.",
-    src: "rock.jpg",
-    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
-    color: "#BBACAF",
-  },
-  {
-    title: "Recycle",
-    description:
-      "In his series Les Rochers Fauves, French photographer Clément Chapillon captures the eerie beauty of the French countryside, exploring the tension between geographical and mental isolation.",
-    src: "tree.jpg",
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
-  },
-  {
-    title: "Reward",
-    description:
-      "Reflecting on the beauty and fragility of Bali, photographer Zissou documents the island’s sacred and mundane moments in his series Water.",
-    src: "water.jpg",
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D",
-  },
-];
+// export const projects = [
+//   {
+//     title: "Reduce",
+//     description:
+//       "In his series AD2186, German photographer Matthias Leidinger captures the awe-inspiring landscapes of the American Southwest, exploring the region’s vast, otherworldly terrain and the sense of wonder it evokes.",
+//     src: "rock.jpg",
+//     link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
+//     color: "#BBACAF",
+//   },
+//   {
+//     title: "Recycle",
+//     description:
+//       "In his series Les Rochers Fauves, French photographer Clément Chapillon captures the eerie beauty of the French countryside, exploring the tension between geographical and mental isolation.",
+//     src: "tree.jpg",
+//     link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
+//     color: "#977F6D",
+//   },
+//   {
+//     title: "Reward",
+//     description:
+//       "Reflecting on the beauty and fragility of Bali, photographer Zissou documents the island’s sacred and mundane moments in his series Water.",
+//     src: "water.jpg",
+//     link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
+//     color: "#C2491D",
+//   },
+// ];
 // #265F51
 // #4FC5A8
 
