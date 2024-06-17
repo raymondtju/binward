@@ -7,7 +7,11 @@ export const metadata: Metadata = {
 };
 
 function ContributePage() {
-  return <div>ContributePage</div>;
+  return (
+    <main>
+      <section className="wrapper pt-10 pb-20">ContributePage</section>
+    </main>
+  );
 }
 
 export default ContributePage;

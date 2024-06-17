@@ -15,10 +15,6 @@ export const links = [
     title: "Shop",
     url: "/shop",
   },
-  {
-    title: "Articles",
-    url: "/articles",
-  },
 ];
 
 export const localEvents = [
