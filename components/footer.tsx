@@ -1,8 +1,32 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
-import { links } from "./navbar";
 
 function Footer() {
+  const links = [
+    {
+      title: "How it works",
+      url: "/how-it-works",
+    },
+    {
+      title: "Events",
+      url: "/events",
+    },
+    {
+      title: "Achievement",
+      url: "/achievement",
+    },
+    {
+      title: "Articles",
+      url: "/articles",
+    },
+    {
+      title: "Rewards",
+      url: "/rewards",
+    },
+  ];
+
   return (
     <footer className="wrapper mb-8">
       <div className="rounded-3xl px-8 py-16 flex md:justify-between md:flex-row flex-col bg-gray-50">
