@@ -66,7 +66,7 @@ const Card = ({
   date: string;
 }) => {
   return (
-    <div className="h-[calc(100vh-400px)] w-full flex items-center justify-center sticky top-28">
+    <div className="h-[500px] w-full flex items-center justify-center sticky top-28">
       <div
         className={`flex flex-col relative h-[500px] w-full origin-top rounded-3xl text-yellow-50`}
         style={{
@@ -242,7 +242,7 @@ export default function Home() {
             <Trash2Icon
               strokeWidth={1.5}
               size={180}
-              className="skew-y-12 px-2 md:w-[180px] md:h-[240px] w-32 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-tl from-[#265F51] to-[#4FC5A8] stroke-white"
+              className="skew-y-12 px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-tl from-[#265F51] to-[#4FC5A8] stroke-white"
             />
             <div className="-mb-6 flex flex-col items-center">
               <Image
@@ -255,13 +255,13 @@ export default function Home() {
               <RecycleIcon
                 strokeWidth={1.5}
                 size={180}
-                className="px-2 md:w-[180px] md:h-[240px] w-32 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-tr from-[#265F51] to-[#4FC5A8] stroke-white"
+                className="px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-tr from-[#265F51] to-[#4FC5A8] stroke-white"
               />
             </div>
             <GiftIcon
               strokeWidth={1.5}
               size={180}
-              className="-skew-y-12  px-2 md:w-[180px] md:h-[240px] w-32 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-bl from-[#265F51] to-[#4FC5A8] stroke-white"
+              className="-skew-y-12  px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-bl from-[#265F51] to-[#4FC5A8] stroke-white"
             />
           </div>
         </div>
