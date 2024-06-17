@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+ :root {
   --foreground-rgb: 0, 0, 0;
+  --foreground-hex: #ffffff;
   --background-start-rgb: 214, 219, 220;
+  --background-start-hex: #070D09;
   --background-end-rgb: 255, 255, 255;
+  --background-end-hex: #1c201d;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,18 +20,48 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+*/
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  /* * {
+    @apply border-border;
+  } */
+  /* body {
+    @apply font-cvd;
+  } */
+
+  /* * {
+    @apply text-white;
+  } */
+
+  /* body {
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--background-end-hex)
+      )
+      var(--background-start-hex);
+  }  */
+
+  @font-face {
+    font-family: 'ClashGrotesk-Variable';
+    src: url('/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+         url('/fonts/ClashGrotesk-Variable.woff') format('woff'),
+         url('/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-6xl mx-auto px-4;
   }
 }
