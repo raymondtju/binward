@@ -149,7 +149,7 @@ const localEvents = [
     date: "July 20, 2024",
     time: "10:00",
     color: "#265092",
-    imageUrl: "/dummy/ward-launch.jpg",
+    imageUrl: "/dummy/ward-launch.webp",
   },
   {
     title: "E-Waste Collection Drive",
@@ -158,7 +158,7 @@ const localEvents = [
     location: "Ward HQ",
     date: "August 15, 2024",
     time: "10:00",
-    imageUrl: "/dummy/coll.jpg",
+    imageUrl: "/dummy/coll.webp",
     color: "#265F51",
   },
   {
@@ -167,7 +167,7 @@ const localEvents = [
       "Learn how to effectively sort and recycle your waste. Participants will get a free recycling kit.",
     location: "Green Community Hall",
     date: "September 10, 2024",
-    imageUrl: "/dummy/workshop.jpg",
+    imageUrl: "/dummy/workshop.webp",
     time: "10:00",
     color: "#4FC5A8",
   },
