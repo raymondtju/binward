@@ -7,7 +7,7 @@ import { Icons } from "./icons";
 
 function Footer() {
   return (
-    <footer className="wrapper mb-8">
+    <footer className="wrapper md:mb-8 mb-4">
       <div className="rounded-3xl px-8 py-16 flex md:justify-between md:flex-row flex-col bg-gray-50">
         <div className="flex sm:flex-row flex-row-reverse gap-16">
           <div className="max-w-60">
