@@ -7,6 +7,12 @@ import {
   ShoppingBagIcon,
   ShoppingBasketIcon,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ward Shop",
+  description: "Spend Your Wards on Sustainable Products",
+};
 
 function ShopPage() {
   return (
@@ -34,7 +40,7 @@ function ShopPage() {
           {shopProducts.map((product, index) => (
             <Link
               href={product.path}
-              className="relative rounded-2xl p-3 bg-gray-50"
+              className="relative rounded-2xl p-3 bg-gray-50 hover:shadow-md transition-all duration-300"
               key={index}
             >
               <Image

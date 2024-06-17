@@ -253,7 +253,7 @@ export default function Home() {
                 width={100}
                 height={50}
                 alt="ward"
-                className="mx-auto mb-4"
+                className="mx-auto mb-4 md:w-24 w-20"
               />
               <RecycleIcon
                 strokeWidth={1.5}
