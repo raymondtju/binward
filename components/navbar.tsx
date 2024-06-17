@@ -36,7 +36,7 @@ function NavLink(linkData: { title: string; url: string }) {
     <Link
       href={linkData.url}
       className={`text-gray-900 px-4 py-1.5 rounded-3xl hover:bg-gray-100 transition-all duration-300 font-medium ${
-        pathname === linkData.url ? "bg-gray-100 border" : ""
+        pathname.startsWith(linkData.url) ? "bg-gray-100 border" : ""
       }`}
       // target="_blank"
     >

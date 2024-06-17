@@ -15,14 +15,11 @@ export const links = [
     title: "Articles",
     url: "/articles",
   },
-  {
-    title: "Rewards",
-    url: "/rewards",
-  },
 ];
 
 export const shopProducts = [
   {
+    id: 1,
     name: "Reusable Water Bottle",
     price: 500,
     category: "Eco-Friendly Products",
@@ -34,8 +31,10 @@ export const shopProducts = [
     },
     availability: 25,
     totalStock: 100,
+    path: "/shop/reusable-water-bottle",
   },
   {
+    id: 2,
     name: "Organic Cotton Tote Bag",
     price: 300,
     category: "Eco-Friendly Products",
@@ -47,8 +46,10 @@ export const shopProducts = [
     },
     availability: 40,
     totalStock: 200,
+    path: "/shop/organic-cotton-tote-bag",
   },
   {
+    id: 3,
     name: "Recycling Bin Set",
     price: 1500,
     category: "Home & Garden",
@@ -60,8 +61,10 @@ export const shopProducts = [
     },
     availability: 15,
     totalStock: 50,
+    path: "/shop/recycling-bin-set",
   },
   {
+    id: 4,
     name: "Solar Powered Charger",
     price: 2500,
     category: "Electronics",
@@ -73,8 +76,10 @@ export const shopProducts = [
     },
     availability: 10,
     totalStock: 30,
+    path: "/shop/solar-powered-charger",
   },
   {
+    id: 5,
     name: "Bamboo Toothbrush Pack",
     price: 200,
     category: "Personal Care",
@@ -86,8 +91,10 @@ export const shopProducts = [
     },
     availability: 50,
     totalStock: 150,
+    path: "/shop/bamboo-toothbrush-pack",
   },
   {
+    id: 6,
     name: "Compostable Phone Case",
     price: 800,
     category: "Accessories",
@@ -99,8 +106,10 @@ export const shopProducts = [
     },
     availability: 20,
     totalStock: 100,
+    path: "/shop/compostable-phone-case",
   },
   {
+    id: 7,
     name: "Eco-Friendly Cleaning Kit",
     price: 1200,
     category: "Home & Garden",
@@ -112,8 +121,10 @@ export const shopProducts = [
     },
     availability: 30,
     totalStock: 120,
+    path: "/shop/eco-friendly-cleaning-kit",
   },
   {
+    id: 8,
     name: "LED Light Bulb Pack",
     price: 600,
     category: "Electronics",
@@ -125,8 +136,10 @@ export const shopProducts = [
     },
     availability: 60,
     totalStock: 200,
+    path: "/shop/led-light-bulb-pack",
   },
   {
+    id: 9,
     name: "Recycled Notebook",
     price: 150,
     category: "Stationery",
@@ -138,8 +151,10 @@ export const shopProducts = [
     },
     availability: 100,
     totalStock: 500,
+    path: "/shop/recycled-notebook",
   },
   {
+    id: 10,
     name: "Stainless Steel Straw Set",
     price: 350,
     category: "Eco-Friendly Products",
@@ -151,5 +166,6 @@ export const shopProducts = [
     },
     availability: 75,
     totalStock: 300,
+    path: "/shop/stainless-steel-straw-set",
   },
 ];
