@@ -16,7 +16,9 @@ import {
   CalendarHeartIcon,
   GemIcon,
   GiftIcon,
+  LightbulbIcon,
   MapIcon,
+  MoveUpRightIcon,
   RecycleIcon,
   Trash2Icon,
 } from "lucide-react";
@@ -98,8 +100,9 @@ const Card = ({
               <p className="text-lg">{description}</p>
             </div>
 
-            <button className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit">
+            <button className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit flex gap-2 items-center">
               Attend
+              <MoveUpRightIcon size={12} />
             </button>
           </div>
         </div>
@@ -171,7 +174,7 @@ const localEvents = [
 ];
 export default function Home() {
   return (
-    <main className="wrapper">
+    <main className="">
       {/* <div className="flex items-center flex-col h-screen justify-center">
         <motion.div
           variants={variants}
@@ -224,7 +227,7 @@ export default function Home() {
         </motion.p>
       </div> */}
 
-      <section className="lg:my-48 my-36 lg:flex lg:justify-between lg:flex-row flex justify-center flex-col-reverse md:gap-6 gap-8">
+      <section className="wrapper lg:my-48 mt-36 mb-40 lg:flex lg:justify-between lg:flex-row flex justify-center flex-col-reverse md:gap-6 gap-8">
         <div className="flex flex-col justify-center text-center lg:text-left">
           <h1 className="md:text-5xl text-4xl font-semibold tracking-tight">
             Turn Your Trash Into Treasure
@@ -267,8 +270,68 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <MapIcon className="rounded-full p-3.5 bg-gray-50 mb-2" size={60} />
+      <section
+        className="bg-gradient-to-bl from-[#4FC5A8] to-[#4FC5A8] py-20"
+        id="how-it-works"
+      >
+        <div className="wrapper">
+          <LightbulbIcon
+            className="rounded-full p-3.5 bg-yellow-50 mb-2"
+            size={60}
+          />
+          <h2 className="text-4xl font-medium tracking-tight">
+            <span className="text-[#265F51]">How</span> it works
+          </h2>
+          <div className="grid grid-cols-2 gap-4 mt-10">
+            <div className="relative rounded-3xl bg-yellow-50 p-4">
+              <div className="absolute right-4 top-4">
+                <span className="text-lg font-medium">1</span>
+              </div>
+              <div className="w-10/12">
+                <h3 className="font-medium text-2xl">
+                  Sign Up and Set Up Your Profile
+                </h3>
+              </div>
+            </div>
+            <div className="relative rounded-3xl bg-yellow-50 p-4">
+              <div className="absolute right-4 top-4">
+                <span className="text-lg font-medium">2</span>
+              </div>
+              <div className="w-10/12">
+                <h3 className="font-medium text-2xl">
+                  Sort and Select Your Waste
+                </h3>
+              </div>
+            </div>
+            <div className="relative rounded-3xl bg-yellow-50 p-4">
+              <div className="absolute right-4 top-4">
+                <span className="text-lg font-medium">3</span>
+              </div>
+              <div className="w-10/12">
+                <h3 className="font-medium text-2xl">
+                  Schedule a Pickup or Drop-Off
+                </h3>
+              </div>
+            </div>
+            <div className="relative rounded-3xl bg-yellow-50 p-4">
+              <div className="absolute right-4 top-4">
+                <span className="text-lg font-medium">4</span>
+              </div>
+              <div className="w-10/12">
+                <h3 className="font-medium text-2xl">
+                  Earn Wards and Track Your Impact
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="wrapper pt-20">
+        <MapIcon
+          className="rounded-full p-3.5 bg-[#265F51] stroke-white mb-2"
+          size={60}
+        />
         <h2 className="text-4xl font-medium tracking-tight">
           Local <span className="text-[#265F51]">Event</span>
         </h2>

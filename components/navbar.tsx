@@ -4,6 +4,7 @@ import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { links } from "../utils/constant";
 
 // export const links = [
 //   {
@@ -42,29 +43,6 @@ function NavLink(linkData: { title: string; url: string }) {
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const links = [
-    {
-      title: "How it works",
-      url: "/how-it-works",
-    },
-    {
-      title: "Events",
-      url: "/events",
-    },
-    {
-      title: "Achievement",
-      url: "/achievement",
-    },
-    {
-      title: "Articles",
-      url: "/articles",
-    },
-    {
-      title: "Rewards",
-      url: "/rewards",
-    },
-  ];
 
   return (
     <nav className="backdrop-blur-lg sticky top-0 z-50 transition-all ease-linear duration-200">
