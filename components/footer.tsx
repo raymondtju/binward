@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { links } from "../utils/constant";
+import { Icons } from "./icons";
 
 function Footer() {
   return (
@@ -39,6 +40,16 @@ function Footer() {
                 Submit
               </button>
             </div>
+          </div>
+
+          <div className="flex flex-row gap-2 mt-2 md:justify-start justify-center">
+            <Link
+              href="https://github.com/raymondtju/binward"
+              target="_blank"
+              className="text-gray-800 p-2 hover:bg-gray-100 rounded-xl transition-all duration-300 opacity-80 hover:opacity-100"
+            >
+              <Icons.github className="w-6 h-6" />
+            </Link>
           </div>
         </div>
       </div>
