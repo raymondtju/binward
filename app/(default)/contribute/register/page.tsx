@@ -19,6 +19,7 @@ import { Button } from "../../../../components/button";
 import {
   ArrowDownToLineIcon,
   CalendarIcon,
+  MoveRightIcon,
   PaperclipIcon,
   XIcon,
 } from "lucide-react";
@@ -28,6 +29,27 @@ import { Calendar } from "../../../../components/calendar";
 import { Textarea } from "../../../../components/textarea";
 import { useDropzone, FileRejection } from "react-dropzone";
 import { getBase64 } from "../../../../utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../../../../components/dialog";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../../../../components/drawer";
 
 function ContributeRegisterPage() {
   const [date, setDate] = React.useState<Date>();
@@ -126,7 +148,7 @@ function ContributeRegisterPage() {
 
         <div className="mt-8 grid md:grid-cols-5 grid-cols-1 md:gap-x-8 gap-y-4 w-full">
           <div
-            className="text-sm border w-full md:max-w-lg rounded-2xl relative col-span-2"
+            className="text-sm border w-full md:max-w-lg h-80 rounded-2xl relative col-span-2"
             {...(selectedImages?.length === 0 || !selectedImages
               ? isDragActiveImages && getRootPropsImages()
               : {})}
@@ -256,9 +278,148 @@ function ContributeRegisterPage() {
               <Label htmlFor="quantity">Additional Noted</Label>
               <Textarea placeholder="Additional noted to us maybe " />
             </div>
-            <button className="text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] h-fit flex gap-2 items-center w-full justify-center mt-4">
-              Pick Up My Waste
-            </button>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] h-fit flex gap-2 items-center w-full justify-center mt-4">
+                  Pick Up My Waste
+                </button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Success</DialogTitle>
+                  <DialogDescription className="">
+                    Your waste has been successfully registered. Courier will be
+                    at your location on the selected date.
+                  </DialogDescription>
+                  {/* <button
+                    className={rc(
+                      "w-full rounded-2xl p-4 flex gap-2 items-center justify-between",
+                      isSelected ? "bg-gray-50" : "bg-white"
+                    )}
+                    onClick={() => setIsSelected(true)}
+                  >
+                    <label
+                      htmlFor="ward"
+                      className="flex gap-2 items-center font-medium"
+                    >
+                      <Image
+                        src="/svg/color-logo.svg"
+                        alt="logo"
+                        width={20}
+                        height={20}
+                      />
+                      <span>
+                        $WARD{" "}
+                        <span className="text-sm text-gray-600">
+                          (Balance: 1000 $WARD)
+                        </span>
+                      </span>
+                    </label>
+                    <input
+                      type="radio"
+                      name="payment"
+                      id="ward"
+                      className="h-4 w-4 checked:bg-[#265F51] checked:border-[#265F51] checked:border"
+                      checked={isSelected}
+                    />
+                  </button> */}
+
+                  <DialogFooter>
+                    <Drawer>
+                      <DrawerTrigger asChild>
+                        <button className="text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] h-fit flex gap-2 items-center w-full justify-center mt-4">
+                          View Contribution History
+                          <MoveRightIcon size={12} />
+                        </button>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <DrawerHeader className="wrapper w-full">
+                          <DrawerTitle>Contribution History</DrawerTitle>
+                          <DrawerDescription>
+                            Your contribution history will be shown here
+                          </DrawerDescription>
+                        </DrawerHeader>
+
+                        <div className="wrapper w-full flex flex-col gap-4 h-80">
+                          <div className="flex justify-between">
+                            <div className="flex-1">
+                              <p className="">27th August, 2024 - 10:00 AM</p>
+
+                              <div className="flex gap-4 mt-4 flex-1">
+                                <div className="w-24 h-24">
+                                  <Image
+                                    src="/dummy/know-plastic.jpg"
+                                    alt="preview"
+                                    layout="responsive"
+                                    width={100}
+                                    height={100}
+                                  />
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                  <p className="text-sm font-semibold">
+                                    Plastic Waste
+                                  </p>
+                                  <p className="text-sm">Quantity: 10 kg</p>
+                                  <p className="text-sm">Pick-up Date: -</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="text-right pt-2">
+                              <p className="text-sm font-semibold">Status</p>
+                              <p className="text-sm text-yellow-500">Pending</p>
+                            </div>
+                          </div>
+
+                          <div className="flex justify-between">
+                            <div className="flex-1">
+                              <p className="">20th July, 2021 - 08:00 PM</p>
+
+                              <div className="flex gap-4 mt-4 flex-1">
+                                <div className="w-24 h-24">
+                                  <Image
+                                    src="/dummy/know-paper.jpg"
+                                    alt="preview"
+                                    layout="responsive"
+                                    width={100}
+                                    height={100}
+                                  />
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                  <p className="text-sm font-semibold">
+                                    Paper Waste
+                                  </p>
+                                  <p className="text-sm">Quantity: 5 kg</p>
+                                  <p className="text-sm">
+                                    Pick-up Date: 22th July 2021
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="text-right pt-2">
+                              <p className="text-sm font-semibold">Status</p>
+                              <p className="text-sm text-[#265F51]">Success</p>
+                              <p className="text-sm text-[#265F51]">
+                                (+100 $WARD)
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <DrawerFooter className="wrapper w-full">
+                          {/* <Button>Submit</Button> */}
+                          <DrawerClose>
+                            <Button variant="outline" className="w-full">
+                              Close
+                            </Button>
+                          </DrawerClose>
+                        </DrawerFooter>
+                      </DrawerContent>
+                    </Drawer>
+                  </DialogFooter>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
