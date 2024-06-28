@@ -350,7 +350,7 @@ export default function Home() {
                 alt="plastic"
                 width={400}
                 height={300}
-                className="rounded-2xl mb-4 h-[240px]"
+                className="rounded-2xl mb-4 h-[240px] w-full object-cover"
               />
               <h3 className="font-medium text-xl">Plastic</h3>
               <p className="text-base mt-1 line-clamp-3">
@@ -370,7 +370,7 @@ export default function Home() {
                 alt="plastic"
                 width={400}
                 height={300}
-                className="rounded-2xl mb-4 h-[240px]"
+                className="rounded-2xl mb-4 h-[240px] w-full object-cover"
               />
               <h3 className="font-medium text-xl">Glass</h3>
               <p className="text-base mt-1 line-clamp-3">
@@ -390,7 +390,7 @@ export default function Home() {
                 alt="plastic"
                 width={400}
                 height={300}
-                className="rounded-2xl mb-4 h-[240px]"
+                className="rounded-2xl mb-4 h-[240px] w-full object-cover"
               />
               <h3 className="font-medium text-xl">Paper</h3>
               <p className="text-base mt-1 line-clamp-3">
