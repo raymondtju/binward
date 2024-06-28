@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useCallback } from "react";
 import { Input } from "../../../../components/input";
 import { Label } from "../../../../components/label";
 import {
@@ -16,14 +16,102 @@ import {
   PopoverTrigger,
 } from "../../../../components/popover";
 import { Button } from "../../../../components/button";
-import { CalendarIcon } from "lucide-react";
+import {
+  ArrowDownToLineIcon,
+  CalendarIcon,
+  PaperclipIcon,
+  XIcon,
+} from "lucide-react";
 import { format } from "date-fns";
 import { rc } from "../../../../utils/css";
 import { Calendar } from "../../../../components/calendar";
 import { Textarea } from "../../../../components/textarea";
+import { useDropzone, FileRejection } from "react-dropzone";
+import { getBase64 } from "../../../../utils";
 
 function ContributeRegisterPage() {
   const [date, setDate] = React.useState<Date>();
+  const [selectedImages, setSelectedImages] = React.useState<File[] | null>(
+    null
+  );
+
+  const onDropImages = useCallback(
+    (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
+      if (acceptedFiles.length > 0) {
+        setSelectedImages((prev) => {
+          if (prev) {
+            return [...prev, ...acceptedFiles];
+          }
+          return acceptedFiles;
+        });
+        handleUploadImages(acceptedFiles[0]);
+      }
+      rejectedFiles.forEach((file) => {
+        file.errors.forEach((err) => {
+          // if (err.code === "file-too-large") {
+          //   toast({
+          //     variant: "destructive",
+          //     title: "File too large",
+          //     description: "Please upload a file smaller than 5 MB",
+          //   });
+          // } else if (err.code === "too-many-files") {
+          //   toast({
+          //     variant: "destructive",
+          //     title: "Too many files",
+          //     description: "Please upload a maximum of 5 files",
+          //   });
+          // }
+        });
+      });
+    },
+    []
+  );
+
+  const {
+    getRootProps: getRootPropsImages,
+    getInputProps: getInputPropsImages,
+    isDragActive: isDragActiveImages,
+  } = useDropzone({
+    onDrop: onDropImages,
+    maxFiles: 5,
+    maxSize: 5242880,
+    multiple: false,
+  });
+
+  const handleUploadImages = async (selectedImage: File | null) => {
+    // setLoadingImages((prev) => {
+    //   if (prev) {
+    //     return [...prev, true];
+    //   }
+    //   return [true];
+    // });
+    try {
+      if (selectedImage) {
+        const base64image = await getBase64(selectedImage);
+        // const upload = await fetch(`/api/upload?upload_type=business_image`, {
+        //   method: "POST",
+        //   body: JSON.stringify({
+        //     file: base64image,
+        //   }),
+        // });
+        // if (upload.ok) {
+        //   const { meta } = await upload.json();
+        //   form.setValue("images_url", [
+        //     ...(form.getValues("images_url") as string[]),
+        //     meta.mediaLink,
+        //   ]);
+        //   // setLoadingImages((prev) => {
+        //   //   if (prev) {
+        //   //     return prev.map((_, i) => (i === prev.length - 1 ? false : _));
+        //   //   }
+        //   //   return prev;
+        //   // });
+        // }
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <main>
@@ -36,75 +124,142 @@ function ContributeRegisterPage() {
           Add your Waste Photo and Details
         </h2>
 
-        <div className="mt-8 space-y-4 bg-gray-50/80 p-8 rounded-2xl max-w-sm">
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="name">Name</Label>
-            <Input type="text" id="name" placeholder="Your Name" />
+        <div className="mt-8 grid md:grid-cols-5 grid-cols-1 md:gap-x-8 gap-y-4 w-full">
+          <div
+            className="text-sm border w-full md:max-w-lg rounded-2xl relative col-span-2"
+            {...(selectedImages?.length === 0 || !selectedImages
+              ? isDragActiveImages && getRootPropsImages()
+              : {})}
+          >
+            <input {...getInputPropsImages()} />
+            {selectedImages?.length === 0 || !selectedImages ? (
+              <div
+                className="h-full p-4 flex cursor-pointer flex-row items-center justify-center"
+                {...getRootPropsImages()}
+              >
+                <PaperclipIcon className="mr-1 mt-[1px] h-3 w-3" />
+                <p className="text-decoration: text-sm font-semibold underline underline-offset-2">
+                  Upload/replace by clicking or dropping an image
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-wrap gap-4 p-4">
+                {selectedImages?.map((file, index) => (
+                  <div key={index} className="relative">
+                    <div className="w-40 h-32">
+                      <img
+                        src={URL.createObjectURL(file)}
+                        alt="preview"
+                        className="w-40 h-32 object-cover rounded-xl"
+                      />
+                    </div>
+                    <XIcon
+                      className="absolute top-1 right-1 h-4 w-4 bg-white rounded-full cursor-pointer p-0.5 z-100"
+                      onClick={() => {
+                        setSelectedImages((prev) => {
+                          if (prev) {
+                            return prev.filter((_, i) => i !== index);
+                          }
+                          return prev;
+                        });
+                      }}
+                    />
+                  </div>
+                ))}
+                {selectedImages?.length < 5 && (
+                  <div
+                    className="w-40 h-32 p-4 flex cursor-pointer flex-row items-center justify-center border-dashed border-2 border-gray-300 rounded-xl"
+                    {...getRootPropsImages()}
+                  >
+                    <PaperclipIcon className="mr-1 mt-[1px] h-3 w-3" />
+                    <p className="text-decoration: text-xsm font-semibold underline underline-offset-2">
+                      Add images
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {isDragActiveImages && (
+              <div className="absolute top-0 bg-white/95 w-full h-full flex flex-row items-center justify-center rounded-2xl">
+                <ArrowDownToLineIcon className="mr-1 mt-[1px] h-4 w-4" />
+                <p className="font-semibold text-sm">
+                  Drop here too add images
+                </p>
+              </div>
+            )}
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input type="email" id="email" placeholder="Email" />
+
+          <div className="space-y-4 bg-gray-50/80 p-8 rounded-2xl w-full md:col-span-3 col-span-1">
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="name">Name</Label>
+              <Input type="text" id="name" placeholder="Your Name" />
+            </div>
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" id="email" placeholder="Email" />
+            </div>
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="phone_number">Phone Number</Label>
+              <Input
+                type="text"
+                id="phone_number"
+                placeholder="Your Phone Number"
+              />
+            </div>
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="phone_number">Waste Type</Label>
+              <Select>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Select your waste type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="platic">Plastic</SelectItem>
+                  <SelectItem value="paper">Paper</SelectItem>
+                  <SelectItem value="electronics">Electronics</SelectItem>
+                  <SelectItem value="metals">Metals</SelectItem>
+                  <SelectItem value="glass">Glass</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="quantity">Quantity</Label>
+              <Input type="text" id="quantity" placeholder="Waste quantity" />
+            </div>
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="quantity">Pick-up Date</Label>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant={"outline"}
+                    className={rc(
+                      "w-[280px] justify-start text-left font-normal",
+                      !date && "text-gray-500"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {date ? format(date, "PPP") : <span>Pick a date</span>}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0">
+                  <Calendar
+                    mode="single"
+                    selected={date as any}
+                    onSelect={setDate as any}
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
+            </div>
+            <div className="grid w-full max-w-full items-center gap-1.5">
+              <Label htmlFor="quantity">Additional Noted</Label>
+              <Textarea placeholder="Additional noted to us maybe " />
+            </div>
+            <button className="text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] h-fit flex gap-2 items-center w-full justify-center mt-4">
+              Pick Up My Waste
+            </button>
           </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="phone_number">Phone Number</Label>
-            <Input
-              type="text"
-              id="phone_number"
-              placeholder="Your Phone Number"
-            />
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="phone_number">Waste Type</Label>
-            <Select>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select your waste type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="platic">Plastic</SelectItem>
-                <SelectItem value="paper">Paper</SelectItem>
-                <SelectItem value="electronics">Electronics</SelectItem>
-                <SelectItem value="metals">Metals</SelectItem>
-                <SelectItem value="glass">Glass</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="quantity">Quantity</Label>
-            <Input type="text" id="quantity" placeholder="Waste quantity" />
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="quantity">Pick-up Date</Label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant={"outline"}
-                  className={rc(
-                    "w-[280px] justify-start text-left font-normal",
-                    !date && "text-gray-500"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? format(date, "PPP") : <span>Pick a date</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0">
-                <Calendar
-                  mode="single"
-                  selected={date as any}
-                  onSelect={setDate as any}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="quantity">Additional Noted</Label>
-            <Textarea placeholder="Additional noted to us maybe " />
-          </div>
-          <button className="text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] h-fit flex gap-2 items-center w-full justify-center mt-4">
-            Pick Up My Waste
-          </button>
         </div>
       </section>
     </main>

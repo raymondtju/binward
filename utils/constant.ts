@@ -60,7 +60,7 @@ export const localEvents = [
 export const shopProducts = [
   {
     id: 1,
-    name: "Reusable Water Bottle",
+    name: "Minature Puzzle",
     price: 500,
     category: "Eco-Friendly Products",
     location: "New York, USA",
@@ -75,7 +75,7 @@ export const shopProducts = [
   },
   {
     id: 2,
-    name: "Organic Cotton Tote Bag",
+    name: "Plastic Webbing",
     price: 300,
     category: "Eco-Friendly Products",
     location: "Los Angeles, USA",
@@ -90,7 +90,7 @@ export const shopProducts = [
   },
   {
     id: 3,
-    name: "Recycling Bin Set",
+    name: "Recycled Plates 100pcs",
     price: 1500,
     category: "Home & Garden",
     location: "Toronto, Canada",
@@ -105,7 +105,7 @@ export const shopProducts = [
   },
   {
     id: 4,
-    name: "Solar Powered Charger",
+    name: "Recycled Liquid Soap Containers",
     price: 2500,
     category: "Electronics",
     location: "San Francisco, USA",
@@ -120,7 +120,7 @@ export const shopProducts = [
   },
   {
     id: 5,
-    name: "Bamboo Toothbrush Pack",
+    name: "Polyster Folding Bottle",
     price: 200,
     category: "Personal Care",
     location: "Vancouver, Canada",
@@ -135,7 +135,7 @@ export const shopProducts = [
   },
   {
     id: 6,
-    name: "Compostable Phone Case",
+    name: "Recycled Woven Polyster Hat",
     price: 800,
     category: "Accessories",
     location: "London, UK",
@@ -150,7 +150,7 @@ export const shopProducts = [
   },
   {
     id: 7,
-    name: "Eco-Friendly Cleaning Kit",
+    name: "Plastic Woven Bag",
     price: 1200,
     category: "Home & Garden",
     location: "Sydney, Australia",
