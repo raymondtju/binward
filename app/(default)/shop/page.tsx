@@ -34,11 +34,17 @@ function ShopPage() {
             <HandHeartIcon size={16} />
             Contribute with you waste
           </button> */}
-          <div className="absolute md:-bottom-12 -bottom-32 right-10">
-            <ShoppingBagIcon size={200} />
+          <div className="absolute md:-bottom-12 -bottom-4 md:right-10 right-28">
+            <ShoppingBagIcon
+              size={200}
+              className="md:w-[200px] md:h-[200px] w-20 h-20"
+            />
           </div>
-          <div className="absolute md:-bottom-8 -bottom-28 right-72">
-            <ShoppingBasketIcon size={200} />
+          <div className="absolute md:-bottom-8 -bottom-4 md:right-72 right-4">
+            <ShoppingBasketIcon
+              size={200}
+              className="md:w-[200px] md:h-[200px] w-20 h-20"
+            />
           </div>
         </div>
       </section>
