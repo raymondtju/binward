@@ -27,6 +27,7 @@ export const localEvents = [
     time: "10:00",
     color: "#265092",
     imageUrl: "/dummy/ward-launch.webp",
+    url: "https://lu.ma/ajuyygdt",
   },
   {
     title: "E-Waste Collection Drive",
@@ -36,6 +37,7 @@ export const localEvents = [
     date: "August 15, 2024",
     time: "10:00",
     imageUrl: "/dummy/coll.webp",
+    url: "https://lu.ma/ajuyygdt",
     color: "#265F51",
   },
   {
@@ -45,6 +47,7 @@ export const localEvents = [
     location: "Green Community Hall",
     date: "September 10, 2024",
     imageUrl: "/dummy/workshop.webp",
+    url: "https://lu.ma/ajuyygdt",
     time: "10:00",
     color: "#4FC5A8",
   },

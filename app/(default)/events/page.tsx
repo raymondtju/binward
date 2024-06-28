@@ -52,10 +52,14 @@ function EventPage() {
                 <p className="text-lg mt-2">{description}</p>
               </div>
 
-              <button className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit flex gap-2 items-center">
+              <Link
+                href="https://lu.ma/ajuyygdt"
+                target="_blank"
+                className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit flex gap-2 items-center"
+              >
                 Attend
                 <MoveUpRightIcon size={12} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -102,10 +106,14 @@ function EventPage() {
                     </div>
                   </div>
                   <div className="absolute bottom-0 p-4 w-full">
-                    <button className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit justify-between w-full flex items-center">
+                    <Link
+                      href="https://lu.ma/ajuyygdt"
+                      target="_blank"
+                      className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit justify-between w-full flex items-center"
+                    >
                       Attend
                       <MoveUpRightIcon size={12} />
-                    </button>
+                    </Link>
                   </div>
                 </Link>
               );
@@ -120,10 +128,14 @@ function EventPage() {
             Connect and Contribute
           </h2>
           <p className="mt-2">Discover Eco-Friendly Events in Your Area</p>
-          <button className="text-[#265092] px-4 py-1.5 rounded-3xl hover:bg-yellow-100 hover:ring-1 transition-all duration-300 font-medium bg-yellow-50 h-fit flex gap-2 items-center mt-4">
+          <Link
+            href="https://lu.ma/"
+            target="_blank"
+            className="text-[#265092] px-4 py-1.5 rounded-3xl hover:bg-yellow-100 hover:ring-1 transition-all duration-300 font-medium bg-yellow-50 h-fit flex gap-2 items-center mt-4 w-fit"
+          >
             <LandmarkIcon size={16} />
             Host your own Event
-          </button>
+          </Link>
           <div className="absolute md:-bottom-12 -bottom-32 right-10">
             {/* <LandmarkIcon size={200} /> */}
             <TicketCheckIcon size={200} />

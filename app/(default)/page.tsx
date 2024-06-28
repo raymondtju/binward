@@ -31,6 +31,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../../components/accrordion";
+import Link from "next/link";
 
 const variants: Variants = {
   open: {
@@ -68,6 +69,7 @@ const Card = ({
   imageUrl,
   color,
   date,
+  url,
 }: {
   title: string;
   description: string;
@@ -75,6 +77,7 @@ const Card = ({
   imageUrl: string;
   color: string;
   date: string;
+  url: string;
 }) => {
   return (
     <div className="h-[500px] w-full flex items-center justify-center sticky top-28">
@@ -109,10 +112,14 @@ const Card = ({
               <p className="text-lg mt-2">{description}</p>
             </div>
 
-            <button className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit flex gap-2 items-center">
+            <Link
+              href={url}
+              target="_blank"
+              className="text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 h-fit flex gap-2 items-center"
+            >
               Attend
               <MoveUpRightIcon size={12} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -212,9 +219,12 @@ export default function Home() {
           <p className="md:text-2xl text-xl mt-2 text-gray-700 font-medium">
             Earn rewards by responsibly managing your waste.
           </p>
-          <button className="mt-6 text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 w-fit lg:mx-0 mx-auto">
+          <Link
+            href="/contribute"
+            className="mt-6 text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 w-fit lg:mx-0 mx-auto"
+          >
             Start Now
-          </button>
+          </Link>
         </div>
         <div className="relative mx-auto lg:mx-0">
           <div className="absolute w-full h-full bg-gradient-to-r from-white via-transparent to-white z-10"></div>
@@ -330,7 +340,11 @@ export default function Home() {
         </h2>
         <div className="mt-8 mb-20">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-            <div className="bg-gray-50 p-4 rounded-3xl">
+            <Link
+              href="https://en.wikipedia.org/wiki/Plastic_recycling"
+              target="_blank"
+              className="relative rounded-2xl p-3 bg-gray-50 hover:bg-gray-100 hover:border-gray-200 border border-transparent transition-all duration-300"
+            >
               <Image
                 src="/dummy/know-plastic.jpg"
                 alt="plastic"
@@ -345,8 +359,12 @@ export default function Home() {
                 packaging. Plastics are typically labeled with recycling codes,
                 which help determine their recyclability.
               </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-3xl">
+            </Link>
+            <Link
+              href="https://en.wikipedia.org/wiki/Glass_recycling"
+              target="_blank"
+              className="relative rounded-2xl p-3 bg-gray-50 hover:bg-gray-100 hover:border-gray-200 border border-transparent transition-all duration-300"
+            >
               <Image
                 src="/dummy/know-plastic.jpg"
                 alt="plastic"
@@ -361,8 +379,12 @@ export default function Home() {
                 bottles and jars. Recycling glass helps conserve natural
                 resources and reduces energy consumption.
               </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-3xl">
+            </Link>
+            <Link
+              href="https://en.wikipedia.org/wiki/Paper_recycling"
+              target="_blank"
+              className="relative rounded-2xl p-3 bg-gray-50 hover:bg-gray-100 hover:border-gray-200 border border-transparent transition-all duration-300"
+            >
               <Image
                 src="/dummy/know-plastic.jpg"
                 alt="plastic"
@@ -377,7 +399,7 @@ export default function Home() {
                 Recycling paper helps save trees, water, and energy, and reduces
                 landfill waste.
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
