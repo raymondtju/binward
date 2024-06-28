@@ -13,10 +13,13 @@ function LoginPage() {
           <Image src="/svg/color-logo.svg" alt="logo" width={48} height={48} />
         </Link>
         <h3 className="text-2xl font-medium mt-4">Welcome to Ward</h3>
-        <button className="mt-6 text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 w-full flex items-center justify-center">
+        <Link
+          href="/"
+          className="mt-6 text-white px-4 py-1.5 rounded-3xl hover:bg-gray-700 hover:ring-1 transition-all duration-300 font-medium bg-gray-900 w-full flex items-center justify-center"
+        >
           <Icons.google className="w-4 h-4 inline-block mr-2" />
           Continue with Google
-        </button>
+        </Link>
       </div>
     </main>
   );

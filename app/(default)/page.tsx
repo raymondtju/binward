@@ -350,10 +350,10 @@ export default function Home() {
                 alt="plastic"
                 width={400}
                 height={300}
-                className="rounded-2xl mb-4"
+                className="rounded-2xl mb-4 h-[240px]"
               />
               <h3 className="font-medium text-xl">Plastic</h3>
-              <p className="text-lg mt-1 line-clamp-3">
+              <p className="text-base mt-1 line-clamp-3">
                 Plastics are versatile materials found in a wide range of
                 products. Common plastic waste includes bottles, containers, and
                 packaging. Plastics are typically labeled with recycling codes,
@@ -366,14 +366,14 @@ export default function Home() {
               className="relative rounded-2xl p-3 bg-gray-50 hover:bg-gray-100 hover:border-gray-200 border border-transparent transition-all duration-300"
             >
               <Image
-                src="/dummy/know-plastic.jpg"
+                src="/dummy/know-glass.jpg"
                 alt="plastic"
                 width={400}
                 height={300}
-                className="rounded-2xl mb-4"
+                className="rounded-2xl mb-4 h-[240px]"
               />
               <h3 className="font-medium text-xl">Glass</h3>
-              <p className="text-lg mt-1 line-clamp-3">
+              <p className="text-base mt-1 line-clamp-3">
                 Glass is a highly recyclable material that can be reused
                 indefinitely without losing quality. Common glass waste includes
                 bottles and jars. Recycling glass helps conserve natural
@@ -386,14 +386,14 @@ export default function Home() {
               className="relative rounded-2xl p-3 bg-gray-50 hover:bg-gray-100 hover:border-gray-200 border border-transparent transition-all duration-300"
             >
               <Image
-                src="/dummy/know-plastic.jpg"
+                src="/dummy/know-paper.jpg"
                 alt="plastic"
                 width={400}
                 height={300}
-                className="rounded-2xl mb-4"
+                className="rounded-2xl mb-4 h-[240px]"
               />
               <h3 className="font-medium text-xl">Paper</h3>
-              <p className="text-lg mt-1 line-clamp-3">
+              <p className="text-base mt-1 line-clamp-3">
                 Paper is one of the most commonly recycled materials. It
                 includes newspapers, magazines, cardboard, and office paper.
                 Recycling paper helps save trees, water, and energy, and reduces

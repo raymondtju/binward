@@ -71,7 +71,7 @@ function EventPage() {
             if (index > 0) {
               return (
                 <Link
-                  href={"#"}
+                  href="https://lu.ma/ajuyygdt"
                   className={`flex flex-col relative h-[500px] w-full rounded-3xl text-yellow-50`}
                   style={{
                     backgroundColor: event.color,
