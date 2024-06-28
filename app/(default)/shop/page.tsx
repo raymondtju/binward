@@ -44,7 +44,7 @@ function ShopPage() {
               key={index}
             >
               <Image
-                src="/dummy/store-bag.webp"
+                src={`/dummy/shop${index + 1}.webp`}
                 alt="logo"
                 width={1000}
                 height={1000}

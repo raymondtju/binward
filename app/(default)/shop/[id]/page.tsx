@@ -100,7 +100,7 @@ function ShopProductPage() {
               </div>
             </div>
             <Image
-              src="/dummy/store-bag.webp"
+              src={`/dummy/shop${product.id}.webp`}
               alt="logo"
               width={1000}
               height={1000}
