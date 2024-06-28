@@ -30,9 +30,12 @@ function ContributePage() {
               <span className="underline underline-offset-2">contribute</span>{" "}
               to a greener future.
             </p>
-            <button className="mt-6 text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] w-fit lg:mx-0 mx-auto">
+            <Link
+              href="/contribute/register"
+              className="mt-6 text-yellow-50 px-4 py-1.5 rounded-3xl hover:bg-[#265F51]/90 hover:ring-1 transition-all duration-300 font-medium bg-[#265F51] w-fit lg:mx-0 mx-auto"
+            >
               Register your Waste
-            </button>
+            </Link>
           </div>
         </div>
         <Marquee gradientColor="white" gradient={true} speed={20}>
@@ -43,7 +46,7 @@ function ContributePage() {
               alt={`kyw${i + 1}`}
               width={400}
               height={240}
-              className="px-1 md:w-[400px] md:h-[240px] w-56 h-32 rounded-3xl flex-none object-cover saturate-150"
+              className="mx-1 md:w-[400px] md:h-[240px] w-56 h-32 rounded-3xl flex-none object-cover saturate-150 border-8 border-solid border-gray-100"
             />
           ))}
         </Marquee>

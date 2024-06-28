@@ -23,10 +23,17 @@ function ShopPage() {
             Eco-Friendly Finds
           </h2>
           <p className="mt-2">Spend Your Wards on Sustainable Products</p>
-          <button className="text-[#265F51] px-4 py-1.5 rounded-3xl hover:bg-yellow-100 hover:ring-1 transition-all duration-300 font-medium bg-yellow-50 h-fit flex gap-2 items-center mt-4">
+          <Link
+            href="/contribute"
+            className="text-[#265F51] px-4 py-1.5 rounded-3xl hover:bg-yellow-100 hover:ring-1 transition-all duration-300 font-medium bg-yellow-50 h-fit w-fit flex gap-2 items-center mt-4"
+          >
             <HandHeartIcon size={16} />
             Contribute with you waste
-          </button>
+          </Link>
+          {/* <button className="text-[#265F51] px-4 py-1.5 rounded-3xl hover:bg-yellow-100 hover:ring-1 transition-all duration-300 font-medium bg-yellow-50 h-fit flex gap-2 items-center mt-4">
+            <HandHeartIcon size={16} />
+            Contribute with you waste
+          </button> */}
           <div className="absolute md:-bottom-12 -bottom-32 right-10">
             <ShoppingBagIcon size={200} />
           </div>
