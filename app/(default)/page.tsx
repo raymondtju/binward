@@ -16,13 +16,21 @@ import {
   CalendarHeartIcon,
   GemIcon,
   GiftIcon,
+  LibraryIcon,
   LightbulbIcon,
   MapIcon,
   MoveUpRightIcon,
   RecycleIcon,
+  ShieldQuestionIcon,
   Trash2Icon,
 } from "lucide-react";
 import { localEvents } from "../../utils/constant";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../components/accrordion";
 
 const variants: Variants = {
   open: {
@@ -310,6 +318,270 @@ export default function Home() {
             return <Card key={`p_${i}`} {...event} i={i} />;
           })}
         </div>
+      </section>
+
+      <section className="wrapper pt-20">
+        <LibraryIcon
+          className="rounded-full p-3.5 bg-[#265F51] stroke-white mb-2"
+          size={60}
+        />
+        <h2 className="text-4xl font-medium tracking-tight">
+          Know your <span className="text-[#265F51]">Waste</span>
+        </h2>
+        <div className="mt-8 mb-20">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+            <div className="bg-gray-50 p-4 rounded-3xl">
+              <Image
+                src="/dummy/know-plastic.jpg"
+                alt="plastic"
+                width={400}
+                height={300}
+                className="rounded-2xl mb-4"
+              />
+              <h3 className="font-medium text-xl">Plastic</h3>
+              <p className="text-lg mt-1 line-clamp-3">
+                Plastics are versatile materials found in a wide range of
+                products. Common plastic waste includes bottles, containers, and
+                packaging. Plastics are typically labeled with recycling codes,
+                which help determine their recyclability.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-3xl">
+              <Image
+                src="/dummy/know-plastic.jpg"
+                alt="plastic"
+                width={400}
+                height={300}
+                className="rounded-2xl mb-4"
+              />
+              <h3 className="font-medium text-xl">Glass</h3>
+              <p className="text-lg mt-1 line-clamp-3">
+                Glass is a highly recyclable material that can be reused
+                indefinitely without losing quality. Common glass waste includes
+                bottles and jars. Recycling glass helps conserve natural
+                resources and reduces energy consumption.
+              </p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-3xl">
+              <Image
+                src="/dummy/know-plastic.jpg"
+                alt="plastic"
+                width={400}
+                height={300}
+                className="rounded-2xl mb-4"
+              />
+              <h3 className="font-medium text-xl">Paper</h3>
+              <p className="text-lg mt-1 line-clamp-3">
+                Paper is one of the most commonly recycled materials. It
+                includes newspapers, magazines, cardboard, and office paper.
+                Recycling paper helps save trees, water, and energy, and reduces
+                landfill waste.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="wrapper pb-20">
+        <ShieldQuestionIcon
+          className="rounded-full p-3.5 bg-[#265F51] stroke-white mb-2"
+          size={60}
+        />
+        <h2 className="text-4xl font-medium tracking-tight">
+          Frequently Asked <span className="text-[#265F51]">Questions</span>
+        </h2>
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue="item-1"
+          className="mt-8"
+        >
+          <AccordionItem value="item-1">
+            <AccordionTrigger>What is Ward?</AccordionTrigger>
+            <AccordionContent>
+              <span className="font-bold">Ward</span> is a web application that
+              rewards users for recycling and participating in eco-friendly
+              practices. By recycling your waste, you earn points called "Wards"
+              which can be redeemed for rewards, discounts, or donations to
+              environmental causes.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2">
+            <AccordionTrigger>How do I start earning Wards?</AccordionTrigger>
+            <AccordionContent>
+              To start earning Wards, follow these simple steps:
+              <ol className="list-decimal pl-5">
+                <li>
+                  <span className="font-bold">Sign Up</span>: Create an account
+                  on Ward.
+                </li>
+                <li>
+                  <span className="font-bold">Register Your Waste</span>: Use
+                  the "Register Waste" button to schedule a pickup.
+                </li>
+                <li>
+                  <span className="font-bold">Recycle</span>: A courier will
+                  pick up your waste and you’ll earn Wards based on the quantity
+                  and type of waste.
+                </li>
+              </ol>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              What types of waste can I recycle with Ward?
+            </AccordionTrigger>
+            <AccordionContent>
+              You can recycle the following types of waste:
+              <ul className="list-disc pl-5">
+                <li>
+                  <span className="font-bold">Plastics</span>: Bottles,
+                  containers, packaging
+                </li>
+                <li>
+                  <span className="font-bold">Paper</span>: Newspapers,
+                  magazines, cardboard
+                </li>
+                <li>
+                  <span className="font-bold">Metals</span>: Aluminum cans, tin
+                  cans, scrap metal
+                </li>
+                <li>
+                  <span className="font-bold">Electronics</span>: Old phones,
+                  computers, batteries
+                </li>
+                <li>
+                  <span className="font-bold">Glass</span>: Bottles, jars
+                </li>
+              </ul>
+              For a detailed list, check out our{" "}
+              <a href="#know-your-waste" className="text-[#265F51]">
+                Know Your Waste
+              </a>{" "}
+              section.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-4">
+            <AccordionTrigger>How do I redeem my Wards?</AccordionTrigger>
+            <AccordionContent>
+              To redeem your Wards:
+              <ol className="list-decimal pl-5">
+                <li>
+                  <span className="font-bold">Log In</span> to your Ward
+                  account.
+                </li>
+                <li>
+                  <span className="font-bold">Visit the Shop</span>: Browse
+                  through the available rewards.
+                </li>
+                <li>
+                  <span className="font-bold">Select an Item</span>: Choose the
+                  item you want and redeem your Wards for it.
+                </li>
+              </ol>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-5">
+            <AccordionTrigger>How are Wards calculated?</AccordionTrigger>
+            <AccordionContent>
+              Wards are calculated based on the type and quantity of waste you
+              recycle. Different materials have different point values, and
+              these values are displayed when you register your waste.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-6">
+            <AccordionTrigger>How do I track my impact?</AccordionTrigger>
+            <AccordionContent>
+              You can track your impact by logging into your account and viewing
+              your dashboard. It will show you the total waste you’ve recycled,
+              the Wards you’ve earned, and the environmental impact of your
+              contributions.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-7">
+            <AccordionTrigger>
+              What should I do if the courier doesn’t arrive?
+            </AccordionTrigger>
+            <AccordionContent>
+              If the courier doesn’t arrive at the scheduled time, please
+              contact our support team at{" "}
+              <a
+                href="mailto:support@ward.recrav.com"
+                className="text-[#265F51]"
+              >
+                support@ward.recrav.com
+              </a>{" "}
+              or through the help section in your account. We will resolve the
+              issue as quickly as possible.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-8">
+            <AccordionTrigger>
+              Can I host my own recycling event?
+            </AccordionTrigger>
+            <AccordionContent>
+              Yes! We encourage community involvement and support for local
+              recycling events. If you’re interested in hosting an event, please
+              get in touch with us at{" "}
+              <a
+                href="mailto:events@ward.recrav.com"
+                className="text-[#265F51]"
+              >
+                events@ward.recrav.com
+              </a>
+              .
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-9">
+            <AccordionTrigger>
+              How do I get involved in local events?
+            </AccordionTrigger>
+            <AccordionContent>
+              You can get involved in local events by visiting our{" "}
+              <a href="#local-events" className="text-[#265F51]">
+                Local Events
+              </a>{" "}
+              page. Here you can find upcoming events, sign up to participate,
+              or volunteer.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-10">
+            <AccordionTrigger>Is Ward available in my area?</AccordionTrigger>
+            <AccordionContent>
+              Ward is continually expanding to new areas. Please check our{" "}
+              <a href="#service-areas" className="text-[#265F51]">
+                Service Areas
+              </a>{" "}
+              section to see if we are available in your location. If not, stay
+              tuned as we might be coming to your area soon!
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-11">
+            <AccordionTrigger>Need more help?</AccordionTrigger>
+            <AccordionContent>
+              If you have any other questions or need further assistance, please
+              contact us at{" "}
+              <a href="mailto:help@ward.recrav.com" className="text-[#265F51]">
+                help@ward.recrav.com
+              </a>{" "}
+              {/* or visit our{" "}
+              <a href="#contact-us" className="text-[#265F51]">
+                Contact Us
+              </a>{" "} */}
+              page.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
     </main>
   );
