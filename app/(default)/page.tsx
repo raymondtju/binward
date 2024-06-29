@@ -233,7 +233,7 @@ export default function Home() {
               className="flex-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
+              transition={{ delay: 0.5, duration: 1, type: "spring" }}
             >
               <Trash2Icon
                 strokeWidth={1.5}
@@ -244,9 +244,9 @@ export default function Home() {
             <div className="-mb-6 flex flex-col items-center">
               <motion.div
                 className="flex-none"
-                initial={{ opacity: 0, scale: 2 }}
+                initial={{ opacity: 0, scale: 2.5 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.1, duration: 0.5, type: "spring" }}
+                transition={{ delay: 1.1, duration: 1, type: "spring" }}
               >
                 <Image
                   src="/svg/full-color-logo.svg"
@@ -260,7 +260,7 @@ export default function Home() {
                 className="flex-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 1 }}
+                transition={{ delay: 0.7, duration: 1, type: "spring" }}
               >
                 <RecycleIcon
                   strokeWidth={1.5}
@@ -273,7 +273,7 @@ export default function Home() {
               className="flex-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 1 }}
+              transition={{ delay: 0.9, duration: 1, type: "spring" }}
             >
               <GiftIcon
                 strokeWidth={1.5}
