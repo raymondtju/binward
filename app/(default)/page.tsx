@@ -229,30 +229,58 @@ export default function Home() {
         <div className="relative mx-auto lg:mx-0">
           <div className="absolute w-full h-full bg-gradient-to-r from-white via-transparent to-white z-10"></div>
           <div className="flex gap-2 items-end mx-4 pb-6 opacity-90">
-            <Trash2Icon
-              strokeWidth={1.5}
-              size={180}
-              className="skew-y-12 px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-tl from-[#265F51] to-[#4FC5A8] stroke-white"
-            />
-            <div className="-mb-6 flex flex-col items-center">
-              <Image
-                src="/svg/full-color-logo.svg"
-                width={100}
-                height={50}
-                alt="ward"
-                className="mx-auto mb-4 md:w-24 w-20"
-              />
-              <RecycleIcon
+            <motion.div
+              className="flex-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              <Trash2Icon
                 strokeWidth={1.5}
                 size={180}
-                className="px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-tr from-[#265F51] to-[#4FC5A8] stroke-white"
+                className="skew-y-12 px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl shadow-lg bg-gradient-to-tl from-[#265F51] to-[#4FC5A8] stroke-white"
               />
+            </motion.div>
+            <div className="-mb-6 flex flex-col items-center">
+              <motion.div
+                className="flex-none"
+                initial={{ opacity: 0, scale: 2 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.1, duration: 0.5, type: "spring" }}
+              >
+                <Image
+                  src="/svg/full-color-logo.svg"
+                  width={100}
+                  height={50}
+                  alt="ward"
+                  className="mx-auto mb-4 md:w-24 w-20"
+                />
+              </motion.div>
+              <motion.div
+                className="flex-none"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 1 }}
+              >
+                <RecycleIcon
+                  strokeWidth={1.5}
+                  size={180}
+                  className="px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl shadow-lg bg-gradient-to-tr from-[#265F51] to-[#4FC5A8] stroke-white"
+                />
+              </motion.div>
             </div>
-            <GiftIcon
-              strokeWidth={1.5}
-              size={180}
-              className="-skew-y-12  px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl flex-none shadow-lg bg-gradient-to-bl from-[#265F51] to-[#4FC5A8] stroke-white"
-            />
+            <motion.div
+              className="flex-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9, duration: 1 }}
+            >
+              <GiftIcon
+                strokeWidth={1.5}
+                size={180}
+                className="-skew-y-12  px-2 md:w-[180px] md:h-[240px] w-24 h-40 rounded-3xl shadow-lg bg-gradient-to-bl from-[#265F51] to-[#4FC5A8] stroke-white"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
