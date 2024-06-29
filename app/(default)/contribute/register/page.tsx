@@ -156,13 +156,23 @@ function ContributeRegisterPage() {
             <input {...getInputPropsImages()} />
             {selectedImages?.length === 0 || !selectedImages ? (
               <div
-                className="h-full p-4 flex cursor-pointer flex-row items-center justify-center"
+                className="h-full p-4 flex flex-col cursor-pointer justify-center items-center"
                 {...getRootPropsImages()}
               >
-                <PaperclipIcon className="mr-1 mt-[1px] h-3 w-3" />
-                <p className="text-decoration: text-sm font-semibold underline underline-offset-2">
-                  Upload/replace by clicking or dropping an image
-                </p>
+                <Image
+                  src="/dummy/qr.jpeg"
+                  alt="qr"
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 mx-auto"
+                />
+                <div className="flex flex-row items-center justify-center">
+                  <PaperclipIcon className="mr-1 mt-[1px] h-4 w-4 block flex-none" />
+                  <p className="text-decoration: text-sm font-semibold underline underline-offset-2">
+                    Upload/replace by clicking or dropping an image, You can
+                    also scan this QR from you phone
+                  </p>
+                </div>
               </div>
             ) : (
               <div className="flex flex-wrap gap-4 p-4">
